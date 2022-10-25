@@ -1,7 +1,7 @@
 function Contenido() {
   return (
-    <div className="container pt-5">
-      <h3>Bienvenido</h3>
+    <div className="container">
+      <h1 className="m-3">Bienvenido</h1>
       <table className="table">
         <thead className="bg-light">
           <tr>

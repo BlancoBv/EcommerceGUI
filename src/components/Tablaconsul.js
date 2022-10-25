@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import get from "../helpers/get";
+import { useLocation } from "react-router-dom";
+
 function Tablaconsul({ tabla }) {
-  const [datos, setdatos] = useState(null);
+  const [datos, setDatos] = useState(null);
+  const rutaActual = useLocation();
+
   async function extraerData(x) {
     const data = await get(x);
-    setdatos(data.result);
+    setDatos(data.result);
   }
   //extraerData();
   useEffect(() => {
@@ -23,6 +27,9 @@ function Tablaconsul({ tabla }) {
               <th scope="col">Nombre</th>
               <th scope="col">Apellido paterno</th>
               <th scope="col">Apellido materno</th>
+              {rutaActual.pathname === "/up-del" ? (
+                <th scope="col">Eliminar/Actualizar</th>
+              ) : null}
             </tr>
           </thead>
           <tbody>

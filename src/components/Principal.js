@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import auth from "../helpers/auth";
 function Principal() {
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+  const [user, setUser] = useState(null);
+  const [pass, setPass] = useState(null);
 
   return (
     <div className="col container-sm mt-5">
@@ -48,9 +47,14 @@ function Principal() {
       </div>
 
       <div className="row mb-3 ps-5 pe-5">
-        <Link type="button" className="btn btn-primary " to="home">
+        <button
+          type="button"
+          className="btn btn-primary "
+          to="home"
+          onClick={async () => await auth(user, pass)}
+        >
           Validar
-        </Link>
+        </button>
       </div>
     </div>
   );

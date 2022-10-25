@@ -1,15 +1,16 @@
 export default async function get(endpoint, metodo) {
   try {
-    let url = `http://192.168.1.143:5000/api/${endpoint}`;
-    let options = {
-      mode: "cors",
+    let url = `http://localhost:5000/api/${endpoint}`;
+    let optios = {
+      mode: "no-cors",
       method: metodo ? metodo : "GET",
-      header: {
-        "Access-Control-Allow-Origin": "*",
-      },
+      headers: new Headers({
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Access-Control-Allow-Origin": "* ",
+      }),
     };
 
-    let res = await fetch(url, options);
+    let res = await fetch(url, optios);
     let json = await res.json();
 
     console.log(json);
