@@ -1,37 +1,16 @@
+import IMG from "./img/IMG_PRINC.jpg";
+import { Link } from "react-router-dom";
+
 function Contenido() {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h1 className="m-3">Bienvenido</h1>
-      <table className="table">
-        <thead className="bg-light">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td></td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      <img src={IMG} className="img-fluid" width="500" alt="" />
+      <div className="mt-3">
+        <Link type="button" className="btn btn-primary" to="/consultar">
+          Empezar
+        </Link>
+      </div>
     </div>
   );
 }

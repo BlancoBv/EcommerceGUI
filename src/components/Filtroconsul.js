@@ -1,7 +1,7 @@
-import { Accordion, Form, FloatingLabel } from "react-bootstrap";
+import { Accordion, Form /*, FloatingLabel */ } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
-function Filtroconsul({ setTabla, tabla, id, setId }) {
+function Filtroconsul({ setTabla, tabla }) {
   const rutaActual = useLocation();
   return (
     <div className="container-fluid">
@@ -26,14 +26,14 @@ function Filtroconsul({ setTabla, tabla, id, setId }) {
               >
                 <option value="0">Seleccionar tabla</option>
                 <option value="user">Usuario</option>
-                <option value="direcciones">Direcciones</option>
-                <option value="3">Three</option>
+                <option value="address">Direcciones</option>
+                <option value="cuentas">Cuentas</option>
               </Form.Select>
               <p className="fst-italic text-success">
                 {tabla ? `Consultando tabla: ${tabla}` : "Selecciona una tabla"}
               </p>
             </div>
-            {/*Input de id*/}
+            {/* 
             <div className="col">
               <FloatingLabel
                 controlId="floatingInput"
@@ -50,7 +50,7 @@ function Filtroconsul({ setTabla, tabla, id, setId }) {
                     : "No estas filtrando por id"}
                 </p>
               </FloatingLabel>
-            </div>
+            </div> */}
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

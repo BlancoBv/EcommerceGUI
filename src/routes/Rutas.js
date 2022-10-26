@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Principal from "../components/Principal.js";
 import Layout from "../GUI/Layout.js";
 import Notfound from "../components/pages/Notfound.js";
 import Home from "../components/pages/Home.js";
@@ -11,9 +10,8 @@ function Rutas() {
     <Router>
       <Layout>
         <Routes>
-          <Route exact path="/" element={<Principal />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="*" element={<Notfound />} />
-          <Route exact path="/home" element={<Home />} />
           <Route exact path="/up-del" element={<Actualizar />} />
           <Route exact path="/consultar" element={<Consultar />} />
         </Routes>

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ModalCS from "./pages/ModalCS";
 import { useLocation } from "react-router-dom";
 
 function Barralateral() {
@@ -16,7 +15,7 @@ function Barralateral() {
                 ? `nav-link link-dark fw-light`
                 : "nav-link"
             }
-            to="/home"
+            to="/"
           >
             Inicio
           </Link>
@@ -45,7 +44,6 @@ function Barralateral() {
             Actualizar/eliminar
           </Link>
         </li>
-        <ModalCS />
       </ul>
     </div>
   );

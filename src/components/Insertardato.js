@@ -1,5 +1,25 @@
 import { Accordion, Form } from "react-bootstrap";
+import Formenviar from "./Formenviar";
+import { useState } from "react";
+import get from "../helpers/get";
+
 function Insertardato({ setTabla, tabla }) {
+  const [data, setData] = useState([]);
+
+  const handle = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const enviar = (e) => {
+    e.preventDefault();
+    console.log("-----------");
+    console.log(data);
+    enviarDatos();
+  };
+  const enviarDatos = async () => {
+    get(tabla, "POST", data);
+  };
+
   return (
     <div className="container-fluid mt-2">
       {/* acordion filtros de busqueda*/}
@@ -19,8 +39,8 @@ function Insertardato({ setTabla, tabla }) {
               >
                 <option value="0">Seleccionar tabla</option>
                 <option value="user">Usuario</option>
-                <option value="direcciones">Direcciones</option>
-                <option value="3">Three</option>
+                <option value="address">Direcciones</option>
+                <option value="cuentas">Cuentas</option>
               </Form.Select>
               <p className="fst-italic text-success">
                 {tabla
@@ -30,10 +50,7 @@ function Insertardato({ setTabla, tabla }) {
             </div>
             {/*Input de id*/}
             <div className="row">
-              espacio formulario
-              <button className="btn btn-primary " type="button">
-                Añadir
-              </button>
+              <Formenviar handle={handle} enviar={enviar} tabla={tabla} />
             </div>
           </Accordion.Body>
         </Accordion.Item>
