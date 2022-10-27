@@ -1,12 +1,12 @@
 export default async function get(endpoint, metodo, body) {
   try {
-    let url = `http://localhost:5000/api/${endpoint}`;
+    let url = `http://localhost:5000/api/${endpoint}/`;
     let options = {
       method: metodo ? metodo : "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      //body: JSON.stringify(body),
+      body: JSON.stringify(body),
     };
 
     let res = await fetch(url, options);

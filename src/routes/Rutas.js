@@ -14,6 +14,7 @@ function Rutas() {
           <Route exact path="*" element={<Notfound />} />
           <Route exact path="/up-del" element={<Actualizar />} />
           <Route exact path="/consultar" element={<Consultar />} />
+          <Route exact path="/actualizar-usuario/:id" element={<Home />} />
         </Routes>
       </Layout>
     </Router>

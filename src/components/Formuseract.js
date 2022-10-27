@@ -1,103 +1,81 @@
-function Formdirec({ handle, enviar }) {
+function Formuseract({ handle, enviar }) {
   return (
     <div className="container">
       <form className="row" onSubmit={enviar}>
         <div className="mb-3 col-6">
           <label for="exampleInputEmail1" className="form-label">
-            Calle
+            Nombre(s)
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="calle"
+            name="nombres"
             onChange={handle}
           />
         </div>
         <div className="mb-3 col-3">
           <label for="exampleInputEmail1" className="form-label">
-            Colonia
+            Apellido Paterno
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="colonia"
+            name="apellidoPaterno"
             onChange={handle}
           />
         </div>
         <div className="mb-3 col-3">
           <label for="exampleInputEmail1" className="form-label">
-            Número exterior
+            Apellido materno
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="numExt"
-            onChange={handle}
-          />
-        </div>
-        <div className="mb-3 col-3">
-          <label for="exampleInputEmail1" className="form-label">
-            Número interior
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="emailHelp"
-            name="numInt"
+            name="apellidoMaterno"
             onChange={handle}
           />
         </div>
         <div className="mb-3 col">
           <label for="exampleInputEmail1" className="form-label">
-            Entre calles
+            Usuario
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="entreCalles"
+            name="usuario"
             onChange={handle}
             placeholder="hola123@gmail.com"
           />
         </div>
         <div className="mb-3 col">
           <label for="exampleInputEmail1" className="form-label">
-            Referencia
+            Contraseña
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="referencia"
+            name="password"
             onChange={handle}
+            placeholder="*********"
           />
         </div>
+
         <div className="mb-3 col">
           <label for="exampleInputEmail1" className="form-label">
-            ID usuario
+            Nueva contraseña
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="idUsuario"
+            name="rol"
             onChange={handle}
             placeholder="admin/user"
-          />
-        </div>
-        <div className="mb-3 col">
-          <label for="exampleInputEmail1" className="form-label">
-            ID ciudad
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="emailHelp"
-            name="idCiudad"
-            onChange={handle}
           />
         </div>
 
@@ -108,4 +86,4 @@ function Formdirec({ handle, enviar }) {
     </div>
   );
 }
-export default Formdirec;
+export default Formuseract;
