@@ -12,8 +12,11 @@ function Tablaconsul({ tabla }) {
     const resp = await get(`${tabla}/delete/${id}`, "DELETE");
     console.log(id);
     if (resp.statusCode === 200) {
+      window.alert("Registro eliminado con exito.");
       let actualizar = await extraerData(tabla);
       setDatos(actualizar.result);
+    } else {
+      window.alert("Error al eliminar registro");
     }
   };
 
@@ -70,7 +73,7 @@ function Tablaconsul({ tabla }) {
                             <Link
                               className="btn btn-primary "
                               type="button"
-                              to="/actualizar_id"
+                              to={`/actualizar/${tabla}/${el.idUsuario}`}
                             >
                               Actualizar
                             </Link>
@@ -184,7 +187,7 @@ function Tablaconsul({ tabla }) {
                             <Link
                               className="btn btn-primary "
                               type="button"
-                              to={"/actualizar-cuenta/" + el.idBanco}
+                              to={`/actualizar/${tabla}/${el.idBanco}`}
                             >
                               Actualizar
                             </Link>

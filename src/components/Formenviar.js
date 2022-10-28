@@ -1,6 +1,6 @@
-import Formuser from "./Formuser";
-import Formdirec from "./Formdirec";
-import Formcuenta from "./Formcuenta";
+import Formuser from "./formularios/Formuser";
+import Formdirec from "./formularios/Formdirec";
+import Formcuenta from "./formularios/Formcuenta";
 
 function Formenviar({ handle, enviar, tabla }) {
   if (tabla === null) {

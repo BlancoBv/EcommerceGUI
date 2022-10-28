@@ -4,6 +4,7 @@ import Notfound from "../components/pages/Notfound.js";
 import Home from "../components/pages/Home.js";
 import Actualizar from "../components/pages/Actualizar.js";
 import Consultar from "../components/pages/Consultar.js";
+import TablaActualizar from "../components/TablaActualizar.js";
 
 function Rutas() {
   return (
@@ -14,7 +15,11 @@ function Rutas() {
           <Route exact path="*" element={<Notfound />} />
           <Route exact path="/up-del" element={<Actualizar />} />
           <Route exact path="/consultar" element={<Consultar />} />
-          <Route exact path="/actualizar-usuario/:id" element={<Home />} />
+          <Route
+            exact
+            path="/actualizar/:tabla/:id"
+            element={<TablaActualizar />}
+          />
         </Routes>
       </Layout>
     </Router>

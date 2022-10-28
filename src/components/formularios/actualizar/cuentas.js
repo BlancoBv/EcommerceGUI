@@ -1,81 +1,69 @@
-function Formuseract({ handle, enviar }) {
+function cuentas({ handle, enviar }) {
   return (
     <div className="container">
       <form className="row" onSubmit={enviar}>
+        <div className="mb-3 col-3">
+          <label for="exampleInputEmail1" className="form-label">
+            Banco
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            aria-describedby="emailHelp"
+            name="banco"
+            onChange={handle}
+          />
+        </div>
+        <div className="mb-3 col-3">
+          <label for="exampleInputEmail1" className="form-label">
+            CLABE
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            aria-describedby="emailHelp"
+            name="clabe"
+            placeholder="123"
+            onChange={handle}
+          />
+        </div>
         <div className="mb-3 col-6">
           <label for="exampleInputEmail1" className="form-label">
-            Nombre(s)
+            Nombre del titular de cuenta
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="nombres"
+            name="nombreCuenta"
             onChange={handle}
+            defaultValue="Banco"
           />
         </div>
-        <div className="mb-3 col-3">
+        <div className="mb-3 col-6">
           <label for="exampleInputEmail1" className="form-label">
-            Apellido Paterno
+            Tipo de cuenta
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="apellidoPaterno"
+            name="tipoCuenta"
             onChange={handle}
+            placeholder="Deb/Credi"
           />
         </div>
-        <div className="mb-3 col-3">
+        <div className="mb-3 col-6">
           <label for="exampleInputEmail1" className="form-label">
-            Apellido materno
+            ID usuario
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="apellidoMaterno"
-            onChange={handle}
-          />
-        </div>
-        <div className="mb-3 col">
-          <label for="exampleInputEmail1" className="form-label">
-            Usuario
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="emailHelp"
-            name="usuario"
+            name="idUsuario"
             onChange={handle}
             placeholder="hola123@gmail.com"
-          />
-        </div>
-        <div className="mb-3 col">
-          <label for="exampleInputEmail1" className="form-label">
-            Contraseña
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="emailHelp"
-            name="password"
-            onChange={handle}
-            placeholder="*********"
-          />
-        </div>
-
-        <div className="mb-3 col">
-          <label for="exampleInputEmail1" className="form-label">
-            Nueva contraseña
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            aria-describedby="emailHelp"
-            name="rol"
-            onChange={handle}
-            placeholder="admin/user"
           />
         </div>
 
@@ -86,4 +74,4 @@ function Formuseract({ handle, enviar }) {
     </div>
   );
 }
-export default Formuseract;
+export default cuentas;
