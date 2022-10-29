@@ -17,7 +17,12 @@ function Insertardato({ setTabla, tabla }) {
     enviarDatos();
   };
   const enviarDatos = async () => {
-    get(tabla, "POST", data);
+    const resp = await get(tabla, "POST", data);
+    if (resp.statusCode === 200) {
+      window.alert("Registro añadido con exito.");
+    } else {
+      window.alert("Error al añadir registro");
+    }
   };
 
   return (

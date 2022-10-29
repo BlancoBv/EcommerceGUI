@@ -27,7 +27,7 @@ function Filtroconsul({ setTabla, tabla }) {
                 <option value="0">Seleccionar tabla</option>
                 <option value="user">Usuario</option>
                 <option value="address">Direcciones</option>
-                <option value="cuentas">Cuentas</option>
+                <option value="cuentas">Cuentas de banco</option>
               </Form.Select>
               <p className="fst-italic text-success">
                 {tabla ? `Consultando tabla: ${tabla}` : "Selecciona una tabla"}

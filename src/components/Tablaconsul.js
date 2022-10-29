@@ -45,6 +45,7 @@ function Tablaconsul({ tabla }) {
                 <th scope="col">Apellido paterno</th>
                 <th scope="col">Apellido materno</th>
                 <th scope="col">Usuario</th>
+                <th scope="col">Fecha de registro</th>
                 {rutaActual.pathname === "/up-del" ? (
                   <th scope="col">Eliminar/Actualizar</th>
                 ) : null}
@@ -61,6 +62,7 @@ function Tablaconsul({ tabla }) {
                         <td>{el.apellidoPaterno}</td>
                         <td>{el.apellidoMaterno}</td>
                         <td>{el.usuario}</td>
+                        <td>{el.fechaRegistro}</td>
                         {rutaActual.pathname === "/up-del" ? (
                           <td>
                             <button
@@ -100,7 +102,10 @@ function Tablaconsul({ tabla }) {
                 <th scope="col">Ciudad</th>
                 <th scope="col">Colonia</th>
                 <th scope="col">Entre calles</th>
+                <th scope="col">Número exterior</th>
+                <th scope="col">Número interior</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Referencia</th>
                 {rutaActual.pathname === "/up-del" ? (
                   <th scope="col">Eliminar/Actualizar</th>
                 ) : null}
@@ -117,7 +122,10 @@ function Tablaconsul({ tabla }) {
                         <td>{el.ciudad}</td>
                         <td>{el.colonia}</td>
                         <td>{el.entreCalles}</td>
+                        <td>{el.numExt}</td>
+                        <td>{el.numInt}</td>
                         <td>{el.estado}</td>
+                        <td>{el.referencia}</td>
                         {rutaActual.pathname === "/up-del" ? (
                           <td>
                             <button
@@ -130,7 +138,7 @@ function Tablaconsul({ tabla }) {
                             <Link
                               className="btn btn-primary "
                               type="button"
-                              to="/actualizar_id"
+                              to={`/actualizar/${tabla}/${el.idDireccion}`}
                             >
                               Actualizar
                             </Link>

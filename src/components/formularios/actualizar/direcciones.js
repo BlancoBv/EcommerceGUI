@@ -1,68 +1,91 @@
-function cuentas({ handle, enviar }) {
+function direcciones({ handle, enviar }) {
   return (
     <div className="container">
       <form className="row" onSubmit={enviar}>
+        <div className="mb-3 col-6">
+          <label for="exampleInputEmail1" className="form-label">
+            Calle
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            aria-describedby="emailHelp"
+            name="calle"
+            onChange={handle}
+          />
+        </div>
         <div className="mb-3 col-3">
           <label for="exampleInputEmail1" className="form-label">
-            Banco
+            Colonia
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="banco"
+            name="colonia"
             onChange={handle}
           />
         </div>
         <div className="mb-3 col-3">
           <label for="exampleInputEmail1" className="form-label">
-            CLABE
+            Número exterior
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="clabe"
-            placeholder="123"
+            name="numExt"
             onChange={handle}
           />
         </div>
-        <div className="mb-3 col-6">
+        <div className="mb-3 col-3">
           <label for="exampleInputEmail1" className="form-label">
-            Nombre del titular de cuenta
+            Número interior
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="nombreCuenta"
+            name="numInt"
             onChange={handle}
-            defaultValue="Banco"
           />
         </div>
-        <div className="mb-3 col-6">
+        <div className="mb-3 col">
           <label for="exampleInputEmail1" className="form-label">
-            Tipo de cuenta
+            Entre calles
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="tipoCuenta"
+            name="entreCalles"
             onChange={handle}
-            placeholder="Deb/Credi"
+            placeholder="hola123@gmail.com"
           />
         </div>
-        <div className="mb-3 col-6">
+        <div className="mb-3 col">
           <label for="exampleInputEmail1" className="form-label">
-            ID banco
+            Referencia
           </label>
           <input
             type="text"
             className="form-control"
             aria-describedby="emailHelp"
-            name="idBanco"
+            name="referencia"
             onChange={handle}
+          />
+        </div>
+        <div className="mb-3 col">
+          <label for="exampleInputEmail1" className="form-label">
+            ID direccion
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            aria-describedby="emailHelp"
+            name="idDireccion"
+            onChange={handle}
+            placeholder="admin/user"
           />
         </div>
 
@@ -73,4 +96,4 @@ function cuentas({ handle, enviar }) {
     </div>
   );
 }
-export default cuentas;
+export default direcciones;
